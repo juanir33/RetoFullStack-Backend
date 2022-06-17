@@ -5,6 +5,14 @@ import lombok.Data;
 
 import javax.persistence.*;
 
+
+
+/**
+ * @author  Juan Ramallo
+ * @version  1.0
+ * Entidad Subtarea
+ */
+
 @Data
 
 @Entity
