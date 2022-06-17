@@ -5,6 +5,7 @@ import com.sofka.todolist.todolist.repository.TareaRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import javax.transaction.Transactional;
 import java.util.ArrayList;
 import java.util.Optional;
 
@@ -25,7 +26,12 @@ public class TareaService {
         return tareaRepository.findById(id);
     }
 
-
+    @Transactional
+    public Tarea actualizarTarea(Long id, Tarea tarea) {
+        tarea.setId(id);
+        tareaRepository.save(tarea);
+        return tarea;
+    }
 
     public boolean eliminarTarea(Long id) {
         try{

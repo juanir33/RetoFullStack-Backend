@@ -34,5 +34,11 @@ public class TareaController {
             return "No se pudo eliminar la tarea";
         }
     }
+    @PutMapping(path = "/{id}")
+    public Tarea actualizarTarea(@PathVariable("id") Long id, @RequestBody Tarea tarea) {
+
+        return   tareaService.actualizarTarea(id, tarea);
+
+    }
 }
 
